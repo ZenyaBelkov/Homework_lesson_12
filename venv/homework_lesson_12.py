@@ -1,25 +1,38 @@
 # TASK1
 print("Task 1 \n")
 
+imt_boarder_lowest = 15.99
+imt_boarder_low_1 = 16
+imt_boarder_low_2 = 18.50
+imt_boarder_low_3 = 25
+imt_boarder_low_4 = 30
+imt_boarder_low_5 = 35
+imt_boarder_high_1 = 18.49
+imt_boarder_high_2 = 24.99
+imt_boarder_high_3 = 29.99
+imt_boarder_high_4 = 34.99
+imt_boarder_high_5 = 39.99
+imt_boarder_highest = 40
+
 try:
     mass = float(input("Enter your mass in kilograms: "))
     if mass == 0:
         raise ValueError
     height = float(input("Enter your height in meters: "))
     imt = mass / (height ** 2)
-    if imt <= 15.99:
+    if imt <= imt_boarder_lowest:
         print(f"Your imt = {imt}. Severe underweight. Need urgent expert advice \n")
-    elif 16 <= imt <= 18.49:
+    elif imt_boarder_low_1 <= imt <= imt_boarder_high_1:
         print(f"Your imt = {imt}. Insufficient (deficit) body weight. Need expert advice \n")
-    elif 18.50 <= imt <= 24.99:
+    elif imt_boarder_low_2 <= imt <= imt_boarder_high_2:
         print(f"Your imt = {imt}. Norm \n")
-    elif 25 <= imt <= 29.99:
+    elif imt_boarder_low_3 <= imt <= imt_boarder_high_3:
         print(f"Your imt = {imt}. Overweight (pre-obesity). Need expert advice \n")
-    elif 30 <= imt <= 34.99:
+    elif imt_boarder_low_4 <= imt <= imt_boarder_high_4:
         print(f"Your imt = {imt}. Obesity of the first degree. Need expert advice \n")
-    elif 35 <= imt <= 39.99:
+    elif imt_boarder_low_5 <= imt <= imt_boarder_high_5:
         print(f"Your imt = {imt}. Obesity of the second degree. Need expert advice \n")
-    elif imt >= 40:
+    elif imt >= imt_boarder_highest:
         print(f"Your imt = {imt}. Obesity of the third degree (morbid). Need urgent expert advice \n")
 except ZeroDivisionError:
     print("You can't divide on 0. Your height and mass must be more than 0 \n")
